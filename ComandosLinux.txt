@@ -1,0 +1,85 @@
+BUSCAR ARQUIVOS
+┗ sudo find / -name <arquivo> 2>/dev/null
+
+
+BUSCAR TODOS E:
+┣ Coloca os diretórios em um txt
+  ┗ find "INOVA - Unioeste INOVA 2023" -type d > Pastas.txt
+┣ Conta quantas pastas há
+  ┗ find . -type d 2>/dev/null | wc -l
+┗ Lista o tamanho dos diretórios atuais.   
+  ┗ du -sh ./*/ > Arquivo.txt
+
+
+LISTA AS PASTAS COM MENOS DE 1kb
+┣ Retorna a lista falando q vai apagar
+  ┗ find . -type d -name "15_AGEUNI" -exec du -s {} + | awk '$1 < 1 {print "Would remove: "$2}'
+┗ Apaga as pastas
+  ┗ find . -type d -exec du {} + | awk '$1 < 1 {print "Would remove: "$2}'
+
+
+LISTA AS PASTAS VAZIAS E:
+┣ Retorna
+  ┗ find . -type d -empty
+┗ Apaga
+  ┗ find . -type d -empty -delete
+
+
+CRIAR DOCKER
+┣ docker run --name <nome-docker> -p <porta>:<porta> -e POSTGRES_PASSWORD=<senha> -d postgres:14
+┣ sudo docker exec -it <nome-docker> psql -U postgres
+┣ CREATE USER <nome-usario> WITH PASSWORD ‘<senha>’;
+┣ CREATE DATABASE "berimbau" OWNER <nome-usario>;
+┣ GRANT ALL PRIVILEGES ON DATABASE berimbau TO <nome-usario>;
+┗ docker exec -it <nome-docker> psql -U <nome-usario> -d berimbau
+
+
+COMANDOS COMUNS
+┣ Básicos
+  ┣ sudo
+    ┗ executa como adm
+  ┣ cd
+    ┗ se movimenta pelos diretórios
+  ┣ ls
+    ┗ lista o conteúdo de um diretório
+  ┣ apt-get
+    ┗ gerenciador de pacotes
+  ┣ apt
+    ┗ "Advanced Package Tool", apt-get atualizado
+┣ OUTROS
+  ┣ awk
+    ┗ Realiza ações em linhas baseada na coluna
+  ┣ find
+    ┗ busca baseada em critérios
+  ┣ curl
+    ┗ envia e recebe arquivo web via endereço
+  ┣ wget
+    ┗ recebe arquivos da web de maneira não interativa
+  ┣ du
+    ┗ "Drive Usage" avalia o tamanho de diretórios e arquivos no disco
+  ┣ ssh
+    ┗ "Secure SHell" possibilita acesso remoto
+  ┣ >
+    ┗ Joga o resultado de uma execução na outra
+  ┣ 
+    ┗ 
+  ┣ 
+    ┗ 
+  ┣ 
+    ┗ 
+  ┣ 
+    ┗ 
+  ┣ 
+    ┗ 
+  ┣ 
+    ┗ 
+  ┣ 
+    ┗ 
+  ┣ 
+    ┗ 
+  ┣ 
+    ┗ 
+  ┣ 
+    ┗ 
+  ┣ 
+    ┗ 

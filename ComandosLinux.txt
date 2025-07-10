@@ -7,8 +7,10 @@ BUSCAR TODOS E:
   ┗ find "INOVA - Unioeste INOVA 2023" -type d > Pastas.txt
 ┣ Conta quantas pastas há
   ┗ find . -type d 2>/dev/null | wc -l
-┗ Lista o tamanho dos diretórios atuais.   
+┣ Lista o tamanho dos diretórios atuais.   
   ┗ du -sh ./*/ > Arquivo.txt
+┗ Lista todos os diretórios com os tamanhos
+  ┗ du -sh ./*/
 
 
 LISTA AS PASTAS COM MENOS DE 1kb
@@ -61,25 +63,5 @@ COMANDOS COMUNS
     ┗ "Secure SHell" possibilita acesso remoto
   ┣ >
     ┗ Joga o resultado de uma execução na outra
-  ┣ 
-    ┗ 
-  ┣ 
-    ┗ 
-  ┣ 
-    ┗ 
-  ┣ 
-    ┗ 
-  ┣ 
-    ┗ 
-  ┣ 
-    ┗ 
-  ┣ 
-    ┗ 
-  ┣ 
-    ┗ 
-  ┣ 
-    ┗ 
-  ┣ 
-    ┗ 
   ┣ 
     ┗ 

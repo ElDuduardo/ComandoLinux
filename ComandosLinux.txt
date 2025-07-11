@@ -9,8 +9,10 @@ BUSCAR TODOS E:
   ┗ find . -type d 2>/dev/null | wc -l
 ┣ Lista o tamanho dos diretórios atuais.   
   ┗ du -sh ./*/ > Arquivo.txt
-┗ Lista todos os diretórios com os tamanhos
+┣ Lista todos os diretórios com os tamanhos
   ┗ du -sh ./*/
+┗ Substitui os espaços por "_"
+  ┗ find . "* *" -exec rename 's/ /_/g' {} \;
 
 
 LISTA AS PASTAS COM MENOS DE 1kb
@@ -63,5 +65,9 @@ COMANDOS COMUNS
     ┗ "Secure SHell" possibilita acesso remoto
   ┣ >
     ┗ Joga o resultado de uma execução na outra
+  ┣ touch
+    ┗ Cria um novo arquivo
+  ┣ rename
+    ┗ Renomeia os arquivos baseados em critérios
   ┣ 
     ┗ 

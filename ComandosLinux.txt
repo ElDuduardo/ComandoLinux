@@ -29,13 +29,18 @@ LISTA AS PASTAS VAZIAS E:
   ┗ find . -type d -empty -delete
 
 
-CRIAR DOCKER
-┣ docker run --name <nome-docker> -p <porta>:<porta> -e POSTGRES_PASSWORD=<senha> -d postgres:14
-┣ sudo docker exec -it <nome-docker> psql -U postgres
-┣ CREATE USER <nome-usario> WITH PASSWORD ‘<senha>’;
-┣ CREATE DATABASE "berimbau" OWNER <nome-usario>;
-┣ GRANT ALL PRIVILEGES ON DATABASE berimbau TO <nome-usario>;
-┗ docker exec -it <nome-docker> psql -U <nome-usario> -d berimbau
+DOCKER
+  ┣ Criar
+    ┣ docker run --name <nome-docker> -p <porta>:<porta> -e POSTGRES_PASSWORD=<senha> -d postgres:14
+    ┣ sudo docker exec -it <nome-docker> psql -U postgres
+    ┣ CREATE USER <nome-usario> WITH PASSWORD ‘<senha>’;
+    ┣ CREATE DATABASE "berimbau" OWNER <nome-usario>;
+    ┣ GRANT ALL PRIVILEGES ON DATABASE berimbau TO <nome-usario>;
+    ┗ docker exec -it <nome-docker> psql -U <nome-usario> -d berimbau
+  ┣ Iniciar
+    ┗ sudo docker start <nome-docker>
+  ┗ Parar 
+    ┗ sudo Docker kill <nome-docker>
 
 
 COMANDOS COMUNS

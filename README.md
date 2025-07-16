@@ -1,6 +1,7 @@
 # ComandosLinux
 
 > Alguns comandos do terminal linux que uso e descobri que podem ser úteis no dia a dia.
+> Como presuposto interprete "§" como inicaidores e finalizadores dos termos que **VOCÊ** deve editar.
 
 ## COMANDOS COMUNS
 - **Básicos**
@@ -24,18 +25,18 @@
   - `mv`: renomeia ou movimenta um arquivo
 
 ## BUSCAR ARQUIVO PELO NOME
-`sudo find / -name <arquivo> 2>/dev/null`
+`sudo find . -name §Nome do Arquivo§ 2>/dev/null`
 
 ## LISTA AS PASTAS VAZIAS E:
 - **Retorna**: `find . -type d -empty`
 - **Apaga**: `find . -type d -empty -delete`
 
 ## BUSCAR TODOS E:
-- **Coloca os diretórios em um txt**: `find "INOVA - Unioeste INOVA 2023" -type d > Pastas.txt`
-- **Conta quantas pastas há**: `find . -type d 2>/dev/null | wc -l`
+- **Coloca os diretórios em um txt**: `find "*§Nome da Pasta§*" -type d > Pastas.txt`
+- **Conta quantas pastas há**: `find . -type d | wc -l`
 - **Lista o tamanho dos diretórios atuais.**: `du -sh ./*/ > Arquivo.txt`
 - **Lista todos os diretórios com os tamanhos**: `du -sh ./*/`
-- **Substitui no nome o termo "<antigo>" pelo "<novo>"**: `find . -depth -name '*<antigo>*' -execdir bash -c 'for f; do mv -v -- "$f" "${f//<antigo>/<novo>}"; done' _ {} +`
+- **Substitui no nome o termo "<antigo>" pelo "<novo>"**: `find . -depth -name '*§Termo para trocar§*' -execdir bash -c 'for f; do mv -v -- "$f" "${f//§Termo para trocar§/§Novo Termo§}"; done' _ {} +`
 
 ## LISTA AS PASTAS COM MENOS DE 1kb
 - **Retorna a lista falando q vai apagar**: `find . -type d -name "15_AGEUNI" -exec du -s {} + | awk '$1 < 1 {print "Would remove: "$2}'`

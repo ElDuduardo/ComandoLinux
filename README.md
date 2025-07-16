@@ -24,6 +24,10 @@
   - `rename`: Renomeia os arquivos baseados em critérios
   - `mv`: renomeia ou movimenta um arquivo
 
+## ALIAS
+- **Na root execute:** `sudo nano .bash_alises`
+- **Utilize a estrutura:** `alias §Nome do alias§='§comandos do alias§'`
+
 ## BUSCAR ARQUIVO PELO NOME
 `sudo find . -name §Nome do Arquivo§ 2>/dev/null`
 

@@ -5,10 +5,11 @@
 ## COMANDOS COMUNS
 - **Básicos**
   - `sudo`: executa como adm
-  - `cd`: se movimenta pelos diretórios
+  - `cd`: entra e sair das pastas
   - `ls`: lista o conteúdo de um diretório
   - `apt-get`: gerenciador de pacotes
   - `apt`: "Advanced Package Tool", apt-get atualizado
+  - `clear`: limpa o que ta escrito no terminal
   - `--help`: parte de algumas funções, exibe um texto de ajuda
 - **OUTROS**
   - `awk`: Realiza ações em linhas baseada na coluna
@@ -20,6 +21,7 @@
   - `>`: Joga o resultado de uma execução na outra
   - `touch`: Cria um novo arquivo
   - `rename`: Renomeia os arquivos baseados em critérios
+  - `mv`: renomeia ou movimenta um arquivo
 
 ## BUSCAR ARQUIVO PELO NOME
 `sudo find / -name <arquivo> 2>/dev/null`

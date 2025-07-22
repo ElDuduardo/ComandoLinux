@@ -24,9 +24,70 @@
   - `rename`: Renomeia os arquivos baseados em critérios
   - `mv`: renomeia ou movimenta um arquivo
 
+- **LINK ÚTIL**
+  https://www.devmedia.com.br/comandos-importantes-linux/23893
+
+
 ## ALIAS
 - **Na root execute:** `sudo nano .bash_alises`
 - **Utilize a estrutura:** `alias §Nome do alias§='§comandos do alias§'`
+
+
+## COMANDO 
+
+- **FIND**
+  - **Documentação oficial**
+    - https://www.gnu.org/software/findutils/manual/find.html
+    - https://www.gnu.org/software/findutils/manual/find.pdf
+
+  - **Base**
+    - `find` + `[diretorio de busca, se for onde está use o "."]` + `[Parâmetros]`
+  
+  - **Parâmetros:**
+    - Sem parâmetros o comando retorna TUDO
+    - `-empty`: filtra apenas os itens vazios
+    - `-delete`: apaga todos os retornos
+    - `-not`: Nega o próximo parametro
+    - `-exec`: Expecifica que para cada retorno deverá executar a proxima função
+    - `execdir`: Expecifica que para cada retorno de
+     diretorio executa a proxima função
+    - `-type [d, f, l, c, b, p, s]`: filtra a busca apenas por:
+      - `f` Arquivos regulares
+      - `d` Diretórios
+      - `l` Link simbólicos
+      - `c` Dispositivo de caracteres
+      - `b` Dipositivo de bloco
+      - `p` Pipe nomeado
+      - `s` Soquete
+    - `-name ["nm"]`: Passa um nome ["mn"] como filtro
+    - `-path ["./"]`: Passa um nome ["./"] como filtro no caminho  
+    - `-mtime [n]`: Filtra tudo que foi modificado nos ultimos "n" dias
+    - `-newer [nome.txt]`: Filtra por tudo que é mais novo que um arquivo [nome.txt]
+    - `-size [+50M, -1G]`: filtra por tamanho, por exemplo, tudo que tenha mais de 50 mega [+50M] ou menos de 1 giga [-1G]
+    - `-perm [n]`: filtra por tudo que tenha a permissão [n]
+    - `-maxdepth [n]`: especifica a profuncidade méxima de subdiretórios em [n].
+    - `-mindepth [n]`: especifica a profindidade minima de subtiretórios em [n].
+    - `-user [usuario]`: filtra a busca apenas por arquivos pertencentes ao usuário [usuraio]
+    - ``:
+- **WC**
+  - **Documentação útil**
+    - https://guialinux.uniriotec.br/wc/
+
+  - **Base**
+    - `wc` + `método`
+    - Deve receber um conjunto de dados
+
+  - **Parâmetros**
+    - Sem parâmetros o comando retornao:
+      - n de Linhas
+      - n de palanhas
+      - Tamanho de bytes
+      - Nome do arquivo
+    - `-c`: Conta os bytes
+    - `-l`: Conta linhas
+    - `-L`: Mostra a linha mais longa
+    - `-m`: Conta os caracteres
+    - `-w`: Conta as palavras
 
 ## BUSCAR ARQUIVO PELO NOME
 `sudo find . -name §Nome do Arquivo§ 2>/dev/null`
@@ -44,7 +105,6 @@
 
 ## LISTA AS PASTAS COM MENOS DE 1kb
 - **Retorna a lista falando q vai apagar**: `find . -type d -name "15_AGEUNI" -exec du -s {} + | awk '$1 < 1 {print "Would remove: "$2}'`
-- **Apaga as pastas**: `find . -type d -exec du {} + | awk '$1 < 1 {print "Would remove: "$2}'`
 
 ## DOCKER
 - **Criar**

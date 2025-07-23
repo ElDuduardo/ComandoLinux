@@ -29,7 +29,7 @@
 
 
 ## ALIAS
-- **Na root execute:** `sudo nano .bash_alises`
+- **Na root execute:** `sudo nano .bash_aliases`
 - **Utilize a estrutura:** `alias §Nome do alias§='§comandos do alias§'`
 
 

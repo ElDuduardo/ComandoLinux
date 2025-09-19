@@ -1,7 +1,7 @@
 # ComandosLinux
 
 > Alguns comandos do terminal linux que uso e descobri que podem ser úteis no dia a dia.
-> Como presuposto interprete "§" como inicaidores e finalizadores dos termos que **VOCÊ** deve editar.
+> Como presuposto, entenda que tudo que tiver entre "⤷" e "⤶" são termos variáveis, eles devem ser substituidos de acordo com que eles mesmos instruem.
 
 ## COMANDOS COMUNS
 - **Básicos**
@@ -30,7 +30,7 @@
 
 ## ALIAS
 - **Na root execute:** `sudo nano .bash_aliases`
-- **Utilize a estrutura:** `alias §Nome do alias§='§comandos do alias§'`
+- **Utilize a estrutura:** `alias ⤷Nome do alias⤶='⤷comandos do alias⤶'`
 
 
 ## COMANDO 
@@ -41,7 +41,7 @@
     - https://www.gnu.org/software/findutils/manual/find.pdf
 
   - **Base**
-    - `find` + `[diretorio de busca, se for onde está use o "."]` + `[Parâmetros]`
+    - `find` + `⤷diretorio de busca, se for onde está use o "."⤶` + `⤷Parâmetros⤶`
   
   - **Parâmetros:**
     - Sem parâmetros o comando retorna TUDO
@@ -90,29 +90,29 @@
     - `-w`: Conta as palavras
 
 ## BUSCAR ARQUIVO PELO NOME
-`sudo find . -name §Nome do Arquivo§ 2>/dev/null`
+`sudo find . -name ⤷Nome do Arquivo⤶ 2>/dev/null`
 
 ## LISTA AS PASTAS VAZIAS E:
 - **Retorna**: `find . -type d -empty`
 - **Apaga**: `find . -type d -empty -delete`
 
 ## BUSCAR TODOS E:
-- **Coloca os diretórios em um txt**: `find "*§Nome da Pasta§*" -type d > Pastas.txt`
+- **Coloca os diretórios em um txt**: `find "*⤷Nome da Pasta⤶*" -type d > Pastas.txt`
 - **Conta quantas pastas há**: `find . -type d | wc -l`
 - **Lista o tamanho dos diretórios atuais.**: `du -sh ./*/ > Arquivo.txt`
 - **Lista todos os diretórios com os tamanhos**: `du -sh ./*/`
-- **Substitui no nome o termo "<antigo>" pelo "<novo>"**: `find . -depth -name '*§Termo para trocar§*' -execdir bash -c 'for f; do mv -v -- "$f" "${f//§Termo para trocar§/§Novo Termo§}"; done' _ {} +`
+- **Substitui no nome o termo "<antigo>" pelo "<novo>"**: `find . -depth -name '*⤷Termo para trocar⤶*' -execdir bash -c 'for f; do mv -v -- "$f" "${f//⤷Termo para trocar⤶/⤷Novo Termo⤶}"; done' _ {} +`
 
 ## LISTA AS PASTAS COM MENOS DE 1kb
-- **Retorna a lista falando q vai apagar**: `find . -type d -name "15_AGEUNI" -exec du -s {} + | awk '$1 < 1 {print "Would remove: "$2}'`
+- **Retorna a lista falando q vai apagar**: `find . -type d -name "⤷Termo de busca⤶" -exec du -s {} + | awk '$1 < 1 {print "Would remove: "$2}'`
 
 ## DOCKER
 - **Criar**
-  - `docker run --name <nome-docker> -p <porta>:<porta> -e POSTGRES_PASSWORD=<senha> -d postgres:14`
-  - `sudo docker exec -it <nome-docker> psql -U postgres`
-  - `CREATE USER <nome-usario> WITH PASSWORD ‘<senha>’;`
-  - `CREATE DATABASE "berimbau" OWNER <nome-usario>;`
-  - `GRANT ALL PRIVILEGES ON DATABASE berimbau TO <nome-usario>;`
-  - `docker exec -it <nome-docker> psql -U <nome-usario> -d berimbau`
-- **Iniciar**: `sudo docker start <nome-docker>`
-- **Parar**: `sudo Docker kill <nome-docker>`
+  - `docker run --name <⤷nome-docker⤶> -p <⤷porta⤶>:<⤷porta⤶> -e POSTGRES_PASSWORD=<senha> -d postgres:14`
+  - `sudo docker exec -it <⤷nome-docker⤶> psql -U postgres`
+  - `CREATE USER <⤷nome-usario⤶> WITH PASSWORD ‘<⤷senha⤶>’;`
+  - `CREATE DATABASE "⤷nome do DB⤶" OWNER <⤷nome-usario⤶>;`
+  - `GRANT ALL PRIVILEGES ON DATABASE ⤷nome do DB⤶ TO <⤷nome-usario⤶>;`
+  - `docker exec -it <⤷nome-docker⤶> psql -U <⤷nome-usario⤶> -d ⤷nome do DB⤶`
+- **Iniciar**: `sudo docker start <⤷nome-docker⤶>`
+- **Parar**: `sudo Docker kill <⤷nome-docker⤶>`
